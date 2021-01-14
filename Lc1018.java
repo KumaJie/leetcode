@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * 可被5整除的二进制前缀
- *
+ * @date 2021年1月14日
  * @author Kuma
  */
 public class Lc1018 {
