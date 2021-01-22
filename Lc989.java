@@ -12,51 +12,21 @@ import java.util.List;
 public class Lc989 {
     public static List<Integer> addToArrayForm(int[] A, int K) {
         List<Integer> result = new ArrayList<>();
-        String k = K+"";
         int i = A.length - 1;
-        int j = k.length() - 1;
-        boolean flag = false;
-        while (i >= 0 && j >= 0){
-            int add = A[i--] + (k.charAt(j--)-'0');
-            if (flag){
-                add++;
-            }
-            if(add >= 10){
-                flag = true;
-                add -= 10;
-            }else {
-                flag = false;
-            }
-            result.add(add);
+//        进位
+        int carry = 0;
+        while (i >= 0 || K != 0){
+//            计算低位
+            int a = i >= 0 ? A[i] : 0;
+            int b = K % 10;
+            int add = a + b + carry;
+            carry = add / 10;
+            i--;
+            K /= 10;
+            result.add(add % 10);
         }
-        while (i >= 0){
-            int add = A[i--];
-            if (flag){
-                add++;
-            }
-            if(add >= 10){
-                flag = true;
-                add -= 10;
-            }else {
-                flag = false;
-            }
-            result.add(add);
-        }
-        while (j >= 0){
-            int add = k.charAt(j--)-'0';
-            if (flag){
-                add++;
-            }
-            if(add >= 10){
-                flag = true;
-                add -= 10;
-            }else {
-                flag = false;
-            }
-            result.add(add);
-        }
-        if(flag){
-            result.add(1);
+        if(carry != 0){
+            result.add(carry);
         }
         // 翻转
         Collections.reverse(result);
