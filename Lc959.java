@@ -30,10 +30,30 @@ public class Lc959 {
         }
         input(areas);
         int result = 0;
+        Queue<int[]> qu = new LinkedList<>();
         for (int i = 0; i < areas.length; i++) {
             for (int j = 0; j < areas.length; j++) {
                 if(areas[i][j] == 0){
-                    dfs(areas,i,j);
+//                    dfs(areas,i,j);
+                    qu.offer(new int[]{i,j});
+                    while (!qu.isEmpty()){
+                        int[] tmp = qu.poll();
+                        int x = tmp[0];
+                        int y = tmp[1];
+                        areas[x][y] = 1;
+                        if(x + 1 < areas.length && areas[x + 1][y] == 0){
+                            qu.offer(new int[]{x + 1, y});
+                        }
+                        if (y + 1 < areas.length && areas[x][y + 1] == 0){
+                            qu.offer(new int[]{x, y + 1});
+                        }
+                        if(x - 1 >= 0 && areas[x - 1][y] == 0){
+                            qu.offer(new int[]{x - 1, y});
+                        }
+                        if(y - 1 >= 0 && areas[x][y - 1] == 0){
+                            qu.offer(new int[]{x, y - 1});
+                        }
+                    }
                     input(areas);
                     result++;
                 }
