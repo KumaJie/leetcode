@@ -20,7 +20,7 @@
 	* 474.一和零（变种背包问题）
 	* 300.最长递增子序列（有点类似于找零问题）
 * 栈
-	* 316.去除重复字母（[参考题解](https://leetcode-cn.com/problems/remove-duplicate-letters/solution/kan-wan-bao-hui-chao-ji-xiang-xi-si-lu-y-25bu/)）
+	* 316.去除重复字母([参考题解](https://leetcode-cn.com/problems/remove-duplicate-letters/solution/kan-wan-bao-hui-chao-ji-xiang-xi-si-lu-y-25bu/))
 * 分治
 	* 215.数组中的第K个最大元素（快速选择）
 	* 378.有序矩阵中第K小的元素（二分查找）
@@ -30,6 +30,7 @@
 	* 547.省份数量（比较明显）
 	* 1319.连通网络的操作次数（需要结合图知识进行求解，连通分量、连通图）
 	* 1584.连接所有点的最小费用（最小生成树求解）
+	* 959.有斜杠划分的区域([多解](https://leetcode-cn.com/problems/regions-cut-by-slashes/solution/c-dong-hua-zhuan-huan-cheng-dao-yu-ge-sh-guve/))
 * 位运算
 	* 1018.可被5整除的二进制前缀
 * 数组
