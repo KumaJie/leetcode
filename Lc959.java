@@ -10,57 +10,44 @@ import java.util.Queue;
  */
 public class Lc959 {
     public static int regionsBySlashes(String[] grid) {
-        int n = grid.length;
-//        将1*1方格扩展为3*3方格
-        int[][] areas = new int[n * 3][n * 3];
+       int n = grid.length;
+       int size = 4 * n * n;
+       UnionFind unionFind = new UnionFind(size);
         for (int i = 0; i < n; i++) {
+            char[] row = grid[i].toCharArray();
             for (int j = 0; j < n; j++) {
-                char c = grid[i].charAt(j);
-                if (c == '/'){
-                    for (int k = 0; k < 3; k++) {
-                        areas[i * 3 + k][j * 3 + 2 - k] = 1;
-                    }
-                }
+                /**
+                 * \ 0/
+                 * 3\/1
+                 *  /\
+                 * /2 \
+                 * 将一块分为4个部分，其0部分在并查集中下标
+                 * */
+                int index = 4 * (i * n + j);
+                char c = row[j];
+//                单元格内合并
                 if (c == '\\'){
-                    for (int k = 0; k < 3; k++) {
-                        areas[i * 3 + k][j * 3 + k] = 1;
-                    }
+                    unionFind.union(index,index + 1);
+                    unionFind.union(index + 2,index + 3);
+                }else if (c == '/'){
+                    unionFind.union(index, index + 3);
+                    unionFind.union(index + 1,index + 2);
+                }else {
+                    unionFind.union(index, index + 1);
+                    unionFind.union(index + 1,index + 2);
+                    unionFind.union(index + 2,index + 3);
+                }
+//                单元格间合并
+//                向右合并
+                if(j + 1 < n){
+                    unionFind.union(index + 1, 4*(i*n+j+1)+3);
+                }
+                if (i + 1 < n){
+                    unionFind.union(index + 2, 4*((i+1)*n+j));
                 }
             }
         }
-        input(areas);
-        int result = 0;
-        Queue<int[]> qu = new LinkedList<>();
-        for (int i = 0; i < areas.length; i++) {
-            for (int j = 0; j < areas.length; j++) {
-                if(areas[i][j] == 0){
-//                    dfs(areas,i,j);
-                    qu.offer(new int[]{i,j});
-                    while (!qu.isEmpty()){
-                        int[] tmp = qu.poll();
-                        int x = tmp[0];
-                        int y = tmp[1];
-                        areas[x][y] = 1;
-                        if(x + 1 < areas.length && areas[x + 1][y] == 0){
-                            qu.offer(new int[]{x + 1, y});
-                        }
-                        if (y + 1 < areas.length && areas[x][y + 1] == 0){
-                            qu.offer(new int[]{x, y + 1});
-                        }
-                        if(x - 1 >= 0 && areas[x - 1][y] == 0){
-                            qu.offer(new int[]{x - 1, y});
-                        }
-                        if(y - 1 >= 0 && areas[x][y - 1] == 0){
-                            qu.offer(new int[]{x, y - 1});
-                        }
-                    }
-                    input(areas);
-                    result++;
-                }
-            }
-        }
-        System.out.println(result);
-        return result;
+        return unionFind.getCount();
     }
 
     public static void dfs(int[][] areas, int i, int j){
@@ -88,4 +75,38 @@ public class Lc959 {
         regionsBySlashes(grid);
     }
 
+}
+class UnionFind{
+    private int[] parent;
+    private int count;
+
+    public int getCount() {
+        return count;
+    }
+
+    public UnionFind(int n){
+        this.count = n;
+        this.parent = new int[n];
+        for (int i = 0; i < n; i++) {
+            parent[i] = i;
+        }
+    }
+
+    public int find(int x){
+        while (x != parent[x]){
+            parent[x] = parent[parent[x]];
+            x = parent[x];
+        }
+        return x;
+    }
+
+    public void union(int x,int y){
+        int rootX = find(x);
+        int rootY = find(y);
+        if(rootX == rootY){
+            return;
+        }
+        parent[rootX] = rootY;
+        this.count--;
+    }
 }
