@@ -7,22 +7,37 @@ package leetcode;
  */
 public class Lc1579 {
     public static int maxNumEdgesToRemove(int n, int[][] edges) {
-        UnionFind unionFindA = new UnionFind(n);
-        UnionFind unionFindB = new UnionFind(n);
-        for (int[] edge : edges){
-            int u = edge[1] - 1;
-            int v = edge[2] - 1;
-            if (edge[0] == 1){
-                unionFindA.union(u,v,1);
-            }else if(edge[0] == 2){
-                unionFindB.union(u,v,2);
-            }else {
-                unionFindA.union(u,v,3);
-                unionFindB.union(u,v,3);
+        UnionFind a = new UnionFind(n);
+        UnionFind b = new UnionFind(n);
+        int ans = 0;
+        for(int[] edge : edges){
+            edge[1]--;
+            edge[2]--;
+//             公共边
+            if(edge[0] == 3){
+                if(!a.union(edge[1],edge[2])){
+                    ans++;
+                }else{
+                    b.union(edge[1],edge[2]);
+                }
             }
         }
-        return 0;
-
+//         独占边
+        for(int[] edge : edges){
+            if(edge[0] == 1){
+                if(!a.union(edge[1],edge[2])){
+                   ans++; 
+                }
+            }else if(edge[0] == 2){
+                if(!b.union(edge[1],edge[2])){
+                    ans++;
+                }
+            }
+        }
+        if(a.getCount() != 1 || b.getCount() != 1){
+            return -1;
+        }
+        return ans;
     }
     static class  UnionFind{
         private int[] parent;
@@ -49,16 +64,15 @@ public class Lc1579 {
             return x;
         }
 
-        public void union(int x,int y,int type){
+        public boolean union(int x,int y){
             int rootX = find(x);
             int rootY = find(y);
             if(rootX == rootY){
-                return;
+                return false;
             }
             parent[rootX] = rootY;
-            if (type != 3){
-                this.count--;
-            }
+            this.count--;
+            return true;
         }
     }
 
