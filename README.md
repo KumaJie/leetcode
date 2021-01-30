@@ -31,6 +31,7 @@
 	* 1319.连通网络的操作次数（需要结合图知识进行求解，连通分量、连通图）
 	* 1584.连接所有点的最小费用（最小生成树求解）
 	* 959.有斜杠划分的区域([多解](https://leetcode-cn.com/problems/regions-cut-by-slashes/solution/c-dong-hua-zhuan-huan-cheng-dao-yu-ge-sh-guve/))
+	* 1579.保证图可完全遍历
 * 位运算
 	* 1018.可被5整除的二进制前缀
 * 数组
