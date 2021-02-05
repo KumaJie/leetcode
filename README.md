@@ -23,6 +23,7 @@
 	* 1641.统计字典序元音字符串的数目
 	* 338.比特位计数([参考](https://leetcode-cn.com/problems/counting-bits/solution/hen-qing-xi-de-si-lu-by-duadua/))
 	* 1314.矩阵区域和
+	* 714.买卖股票的最佳时机含手续费
 * 栈
 	* 316.去除重复字母([参考题解](https://leetcode-cn.com/problems/remove-duplicate-letters/solution/kan-wan-bao-hui-chao-ji-xiang-xi-si-lu-y-25bu/))
 * 分治
@@ -45,4 +46,5 @@
 	* 2.两数相加(和989类似，[使用模板](https://leetcode-cn.com/problems/add-to-array-form-of-integer/solution/989-ji-zhu-zhe-ge-jia-fa-mo-ban-miao-sha-8y9r/))
 * 滑动窗口
     * 643.子数组最大平均数 I
+    * 1208.尽可能使字符串相等
 
