@@ -43,6 +43,7 @@
 * 数组
 	* 989.数组形式的整数加法
 	* 674.最长连续递增序列
+	* 665.非递减数列
 * 链表
 	* 2.两数相加(和989类似，[使用模板](https://leetcode-cn.com/problems/add-to-array-form-of-integer/solution/989-ji-zhu-zhe-ge-jia-fa-mo-ban-miao-sha-8y9r/))
 * 滑动窗口
