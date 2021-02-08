@@ -25,6 +25,8 @@
 	* 1314.矩阵区域和
 	* 714.买卖股票的最佳时机含手续费
 	* 70.爬楼梯
+	* 877.石子游戏
+	* 1025.除数博弈
 * 栈
 	* 316.去除重复字母([参考题解](https://leetcode-cn.com/problems/remove-duplicate-letters/solution/kan-wan-bao-hui-chao-ji-xiang-xi-si-lu-y-25bu/))
 * 分治
@@ -43,7 +45,7 @@
 * 数组
 	* 989.数组形式的整数加法
 	* 674.最长连续递增序列
-	* 665.非递减数列
+	* 665.非递减数列([参考](https://leetcode-cn.com/problems/non-decreasing-array/solution/3-zhang-dong-tu-bang-zhu-ni-li-jie-zhe-d-06gi/))
 * 链表
 	* 2.两数相加(和989类似，[使用模板](https://leetcode-cn.com/problems/add-to-array-form-of-integer/solution/989-ji-zhu-zhe-ge-jia-fa-mo-ban-miao-sha-8y9r/))
 * 滑动窗口
