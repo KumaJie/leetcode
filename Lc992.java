@@ -23,7 +23,6 @@ public class Lc992 {
                 distinct++;
             }
             freq[A[right]]++;
-            right++;
             while (distinct > K){
                 freq[A[left]]--;
                 if(freq[A[left]] == 0){
@@ -32,6 +31,7 @@ public class Lc992 {
                 left++;
             }
             res += right - left + 1;
+            right++;
         }
         return res;
     }
