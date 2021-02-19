@@ -41,6 +41,7 @@
 	* 1584.连接所有点的最小费用（最小生成树求解）
 	* 959.有斜杠划分的区域([多解](https://leetcode-cn.com/problems/regions-cut-by-slashes/solution/c-dong-hua-zhuan-huan-cheng-dao-yu-ge-sh-guve/))
 	* 1579.保证图可完全遍历
+	* 1631.最小体力消耗路径
 * 位运算
 	* 1018.可被5整除的二进制前缀
 * 数组
