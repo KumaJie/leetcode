@@ -1,4 +1,8 @@
-package leetcode
+package leetcode;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /**
 *@author Kuma
 *@date 2021年2月20日

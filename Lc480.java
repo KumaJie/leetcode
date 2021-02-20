@@ -42,5 +42,6 @@ public class Lc480 {
                 }
             }
         }
+        return null;
     }
 }
