@@ -53,6 +53,7 @@
     * 697.数组的度
     * 766.托普利茨矩阵
     * 832.翻转图像
+    * 867.转置矩阵
 * 链表
 	* 2.两数相加(和989类似，[使用模板](https://leetcode-cn.com/problems/add-to-array-form-of-integer/solution/989-ji-zhu-zhe-ge-jia-fa-mo-ban-miao-sha-8y9r/))
 * 滑动窗口
