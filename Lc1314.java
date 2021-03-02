@@ -1,3 +1,5 @@
+package leetcode;
+
 /**
 * @author Kuma
 * @date 2021年2月3日
