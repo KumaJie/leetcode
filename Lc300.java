@@ -1,5 +1,7 @@
 package leetcode;
 
+import java.util.Arrays;
+
 /**
  * @author Kuma
  * @date 2021年1月24日
@@ -7,21 +9,16 @@ package leetcode;
  */
 public class Lc300 {
     public static int lengthOfLIS(int[] nums) {
-        int[] dp = new int[nums.length + 1];
-        for (int i = 1; i < dp.length; i++) {
-            int max = 0;
-            for (int j = 1; j < i; j++) {
-                if (nums[i - 1] > nums[j - 1]){
-                    max = Math.max(dp[j], max);
+        int[] dp = new int[nums.length];
+        Arrays.fill(dp, 1);
+        int max = 0;
+        for (int i = 1; i < nums.length; i++) {
+            for (int j = 0; j < i; j++) {
+                if (nums[i] > nums[j]){
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
                 }
             }
-            dp[i] = max + 1;
-        }
-        int max = 0;
-        for (int i : dp){
-            if(i > max){
-                max = i;
-            }
+            max = Math.max(dp[i], max);
         }
         return max;
     }
