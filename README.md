@@ -32,6 +32,9 @@
 	* 5.最长回文子串
 * 栈
 	* 316.去除重复字母([参考题解](https://leetcode-cn.com/problems/remove-duplicate-letters/solution/kan-wan-bao-hui-chao-ji-xiang-xi-si-lu-y-25bu/))
+	* 单调栈
+	    * 503.下一个更大元素 II
+	    * 739.每日温度
 * 分治
 	* 215.数组中的第K个最大元素（快速选择）
 	* 378.有序矩阵中第K小的元素（二分查找）
