@@ -29,7 +29,9 @@
 	* 877.石子游戏
 	* 1025.除数博弈
 	* 119.杨辉三角 II(空间优化)
-	* 5.最长回文子串
+	* 回文串问题
+        * 5.最长回文子串
+        * 131.分割回文串
 * 栈
 	* 316.去除重复字母([参考题解](https://leetcode-cn.com/problems/remove-duplicate-letters/solution/kan-wan-bao-hui-chao-ji-xiang-xi-si-lu-y-25bu/))
 	* 单调栈
