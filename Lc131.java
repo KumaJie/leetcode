@@ -9,21 +9,13 @@ import java.util.*;
  */
 public class Lc131 {
     int n;
-    boolean[][] bp;
+    int[][] bp;
     List<List<String>> res = new ArrayList<>();
     List<String> tmp = new ArrayList<>();
 
     public List<List<String>> partition(String s) {
         n = s.length();
-        bp = new boolean[n][n];
-        for (boolean[] i : bp){
-            Arrays.fill(i, true);
-        }
-        for (int i = n - 1; i >= 0; i--) {
-            for (int j = i + 1; j < n; j++) {
-                bp[i][j] = bp[i + 1][j - 1] && s.charAt(i) == s.charAt(j);
-            }
-        }
+        bp = new int[n][n];
         dfs(s, 0);
         return res;
     }
@@ -34,11 +26,28 @@ public class Lc131 {
             return;
         }
         for (int j = i; j < n; j++) {
-            if (bp[i][j]){
+            if (isPalindrome(s, i ,j) > 0){
                 tmp.add(s.substring(i, j + 1));
                 dfs(s, j + 1);
                 tmp.remove(tmp.size() - 1);
             }
         }
     }
+
+//    记忆化
+    public int isPalindrome(String s, int i, int j){
+        if (bp[i][j] != 0){
+            return bp[i][j];
+        }
+        if (i >= j){
+            bp[i][j] = 1;
+        }else if (s.charAt(i) == s.charAt(j)){
+            return isPalindrome(s, i + 1, j - 1);
+        }else {
+            bp[i][j] = -1;
+        }
+        return bp[i][j];
+    }
+
+
 }
