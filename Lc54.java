@@ -18,28 +18,38 @@ public class Lc54 {
 class Solution {
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> res = new ArrayList<>();
+//        四个方向
+        int[][] dir = {{0,1},{1,0},{0,-1},{-1,0}};
+        int curDir = 0;
+//        四个边界
+        int right = matrix[0].length - 1;
+        int bottom = matrix.length - 1;
+        int left = 0;
+        int top = 0;
         int sum = matrix.length * matrix[0].length;
         int i = 0;
         int j = 0;
-        res.add(matrix[i][j]);
-        matrix[i][j] = 101;
         while (res.size() < sum){
-            while (j + 1 < matrix[0].length && matrix[i][j + 1] != 101){
-                res.add(matrix[i][j + 1]);
-                matrix[i][j++] = 101;
+            res.add(matrix[i][j]);
+            if (curDir == 0 && j == right){
+                curDir++;
+                top++;
             }
-            while (i + 1 < matrix.length && matrix[i + 1][j] != 101) {
-                res.add(matrix[i + 1][j]);
-                matrix[i++][j] = 101;
+            if (curDir == 1 && i == bottom){
+                curDir++;
+                right--;
             }
-            while (j - 1 >= 0 && matrix[i][j - 1] != 101){
-                res.add(matrix[i][j - 1]);
-                matrix[i][j--] = 101;
+            if (curDir == 2 && j == left){
+                curDir++;
+                bottom--;
             }
-            while (i - 1 >= 0 && matrix[i - 1][j] != 101) {
-                res.add(matrix[i - 1][j]);
-                matrix[i--][j] = 101;
+            if (curDir == 3 && i == top){
+                curDir++;
+                left++;
             }
+            curDir %= 4;
+            i += dir[curDir][0];
+            j += dir[curDir][1];
         }
         return res;
     }
