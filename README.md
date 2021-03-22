@@ -57,6 +57,7 @@
 	* 1631.最小体力消耗路径
 * 位运算
 	* 1018.可被5整除的二进制前缀
+	* 191.位1的个数([消除最后一个1](https://leetcode-cn.com/problems/number-of-1-bits/solution/fu-xue-ming-zhu-xiang-jie-wei-yun-suan-f-ci7i/))
 * 数组
 	* 989.数组形式的整数加法
 	* 674.最长连续递增序列
