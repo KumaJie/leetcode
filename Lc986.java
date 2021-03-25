@@ -26,11 +26,6 @@ public class Lc986 {
                 j++;
             }
         }
-        int[][] r = new int[res.size()][2];
-        int count = 0;
-        for (int[] s : res){
-            r[count++] = s;
-        }
-        return r;
+        return res.toArray(new int[res.size()][]);
     }
 }
