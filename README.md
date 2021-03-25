@@ -79,6 +79,7 @@
 	* 2.两数相加(和989类似，[使用模板](https://leetcode-cn.com/problems/add-to-array-form-of-integer/solution/989-ji-zhu-zhe-ge-jia-fa-mo-ban-miao-sha-8y9r/))
 	* 206.反转链表
 	* 92.反转链表 II
+    * 82.删除排序链表中的重复元素 II
 * 滑动窗口
     * 643.子数组最大平均数 I
     * 1208.尽可能使字符串相等
