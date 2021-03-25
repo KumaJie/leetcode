@@ -3,9 +3,9 @@ package leetcode;
 /**
  * @author Kuma
  * @date 2021年3月25日
- * 82. 删除排序链表中的重复元素 II
+ * 83. 删除排序链表中的重复元素
  */
-public class Lc82 {
+public class Lc83 {
     public ListNode deleteDuplicates(ListNode head) {
         if (head == null || head.next == null){
             return head;
@@ -15,11 +15,10 @@ public class Lc82 {
             while (next != null && next.val == head.val){
                 next = next.next;
             }
-            return deleteDuplicates(next);
+            head.next = deleteDuplicates(next);
         }else {
             head.next = deleteDuplicates(head.next);
         }
         return head;
-
     }
 }
