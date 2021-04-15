@@ -14,12 +14,14 @@ public class Lc198 {
             return nums[0];
         }
 //        滚动数组
-        int first = nums[0], second = Math.max(first, nums[1]);
+        int[] dp = new int[3];
+        dp[1] = nums[0];
+        dp[2] = Math.max(dp[1], nums[1]);
         for (int i = 2; i < n; i++) {
-            int tmp = second;
-            second = Math.max(first + nums[i], second);
-            first = tmp;
+            dp[0] = dp[2];
+            dp[2] = Math.max(dp[1] + nums[i], dp[2]);
+            dp[1] = dp[0];
         }
-        return second;
+        return dp[2];
     }
 }
