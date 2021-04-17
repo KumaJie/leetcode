@@ -78,6 +78,9 @@
     * 6.Z字形变换
     * 54.螺旋矩阵
     * 59.螺旋矩阵 II
+    * 217.存在重复元素
+    * 219.存在重复元素 II
+    * 220.存在重复元素 III
 * 链表
 	* 2.两数相加(和989类似，[使用模板](https://leetcode-cn.com/problems/add-to-array-form-of-integer/solution/989-ji-zhu-zhe-ge-jia-fa-mo-ban-miao-sha-8y9r/))
 	* 206.反转链表
