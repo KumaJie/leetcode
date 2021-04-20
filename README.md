@@ -80,7 +80,7 @@
     * 59.螺旋矩阵 II
     * 217.存在重复元素
     * 219.存在重复元素 II
-    * 220.存在重复元素 III
+    * 220.存在重复元素 III（滑动窗口）
 * 链表
 	* 2.两数相加(和989类似，[使用模板](https://leetcode-cn.com/problems/add-to-array-form-of-integer/solution/989-ji-zhu-zhe-ge-jia-fa-mo-ban-miao-sha-8y9r/))
 	* 206.反转链表
@@ -131,3 +131,5 @@
     * 240.搜索二维矩阵 II
     * 33.搜索旋转排序数组
     * 81.搜索旋转排序数组 II
+* 字符串
+    * 28.实现 strStr()
