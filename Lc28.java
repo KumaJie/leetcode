@@ -29,30 +29,22 @@ public class Lc28 {
         int i = 0;
         int j = 0;
         while (i < haystack.length()){
-            while (i < haystack.length() && j < needle.length()){
-                if (haystack.charAt(i) != needle.charAt(j)){
-                    break;
-                }
+            if (j == -1 || haystack.charAt(i) == needle.charAt(j)){
                 i++;
                 j++;
+            }else {
+                j = next[j];
             }
             if (j == needle.length()){
                 return i - j;
             }
-            if (next[j] == -1){
-                i++;
-                j = 0;
-            }else {
-                j = next[j];
-            }
-
         }
         return -1;
     }
 
     public static void main(String[] args) {
-        String str = "issip";
-        String tar = "mississippi";
+        String str = "abcabd";
+        String tar = "abcababcabd";
         System.out.println(strStr(tar, str));
     }
 }
