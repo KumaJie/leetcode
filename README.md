@@ -136,6 +136,7 @@
     * 81.搜索旋转排序数组 II
     * 1011.在D天内送达包裹的能力
     * 29.两数相除(衍生快速乘法模板(快速幂))
+    * 1482.制作 m 束花所需的最少天数([宫水三叶](https://leetcode-cn.com/problems/minimum-number-of-days-to-make-m-bouquets/solution/gong-shui-san-xie-li-yong-er-duan-xing-z-ysv4/))
 * 字符串
     * 28.实现 strStr()
     * 12.整数转罗马数字
