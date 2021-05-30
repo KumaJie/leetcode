@@ -68,6 +68,7 @@
 * 位运算
 	* 1018.可被5整除的二进制前缀
 	* 191.位1的个数([消除最后一个1](https://leetcode-cn.com/problems/number-of-1-bits/solution/fu-xue-ming-zhu-xiang-jie-wei-yun-suan-f-ci7i/))
+    * 231.2的幂(lowbit)
 * 数组
 	* 989.数组形式的整数加法
 	* 674.最长连续递增序列
@@ -135,6 +136,7 @@
     * 240.搜索二维矩阵 II
     * 33.搜索旋转排序数组
     * 81.搜索旋转排序数组 II
+    * 153.寻找旋转排序数组中的最小值
     * 1011.在D天内送达包裹的能力
     * 29.两数相除(衍生快速乘法模板(快速幂))
     * 1482.制作 m 束花所需的最少天数([宫水三叶](https://leetcode-cn.com/problems/minimum-number-of-days-to-make-m-bouquets/solution/gong-shui-san-xie-li-yong-er-duan-xing-z-ysv4/))
