@@ -39,6 +39,7 @@
         * 132.分割回文串 II
     * 115.不同的子序列
     * 368.最大整除子集
+    * 1143.最长公共子序列
 * 栈
 	* 316.去除重复字母([参考题解](https://leetcode-cn.com/problems/remove-duplicate-letters/solution/kan-wan-bao-hui-chao-ji-xiang-xi-si-lu-y-25bu/))
 	* 单调栈
